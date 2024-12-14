@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique de Maillots Real Madrid</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .product-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 produits par ligne */
+            gap: 20px;
+        }
+        .product {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+        .product img {
+            max-width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+        .product h3 {
+            font-size: 1.5em;
+            margin: 10px 0;
+            color: #333;
+        }
+        .product p {
+            font-size: 1.2em;
+            color: #e63946;
+            margin: 10px 0;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .cart {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background: #f9f9f9;
+        }
+        .cart h3 {
+            margin: 0 0 10px;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .cart-item span {
+            font-size: 1em;
+        }
+        .remove-btn {
+            background-color: #e63946;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+        .remove-btn:hover {
+            background-color: #c71d28;
+        }
+        /* Panier */
+.cart {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cart h3 {
+    margin: 0 0 20px;
+    font-size: 1.8em;
+    color: #333;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.cart-item span {
+    font-size: 1.1em;
+    color: #333;
+}
+
+.remove-btn {
+    background-color: #e63946;
+    color: white;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.remove-btn:hover {
+    background-color: #c71d28;
+}
+
+#total-price {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #007bff;
+    margin-top: 20px;
+}
+
+.cart button {
+    margin-top: 20px;
+}
+
+/* Page de paiement */
+.container form {
+    display: grid;
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-size: 1.1em;
+    color: #333;
+}
+
+input[type="text"],
+input[type="month"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+input[type="text"]:focus,
+input[type="month"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+        footer {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Boutique de Maillots Real Madrid</h1>
+    </header>
+    <div class="container">
+        <div class="product-gallery">
+            <div class="product">
+                <img src="blanc.png" alt="Maillot Home 2024">
+                <h3>Maillot Home 2024</h3>
+                <p>79,99 &euro;</p>
+                <label for="size-1">Taille :</label>
+                <select id="size-1">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+                <br>
+                <button class="btn" onclick="addToCart('Maillot Home 2024', 79.99, document.getElementById('size-1').value)">Ajouter au Panier</button>
+            </div>
+            <div class="product">
+                <img src="noir.png" alt="Maillot Away 2024">
+                <h3>Maillot Away 2024</h3>
+                <p>84,99 &euro;</p>
+                <label for="size-2">Taille :</label>
+                <select id="size-2">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+                <br>
+                <button class="btn" onclick="addToCart('Maillot Away 2024', 84.99, document.getElementById('size-2').value)">Ajouter au Panier</button>
+            </div>
+            <div class="product">
+                <img src="rouge.jpg" alt="Maillot Third 2024">
+                <h3>Maillot Third 2024</h3>
+                <p>74,99 &euro;</p>
+                <label for="size-3">Taille :</label>
+                <select id="size-3">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+                <br>
+                <button class="btn" onclick="addToCart('Maillot Third 2024', 74.99, document.getElementById('size-3').value)">Ajouter au Panier</button>
+            </div>
+        </div>
+        <div class="cart">
+            <h3>Votre Panier</h3>
+            <div id="cart-items">
+                <p>Aucun article dans le panier</p>
+            </div>
+            <p id="total-price">Total : 0,00 &euro;</p>
+            <button class="btn" onclick="proceedToCheckout()">Passer au Paiement</button>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 - Boutique de Maillots Real Madrid. Tous droits réservés.</p>
+    </footer>
+    <script>
+        const cartItems = [];
+        let totalPrice = 0;
+
+        function addToCart(productName, price, size) {
+            if (!size) {
+                alert("Veuillez choisir une taille !");
+                return;
+            }
+
+            const product = {
+                name: productName,
+                size: size,
+                price: price
+            };
+
+            cartItems.push(product);
+            totalPrice += price;
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartList = document.getElementById('cart-items');
+            const totalElement = document.getElementById('total-price');
+
+            cartList.innerHTML = '';
+            cartItems.forEach((item, index) => {
+                const cartItem = document.createElement('div');
+                cartItem.classList.add('cart-item');
+                cartItem.innerHTML = `
+                    <span>${item.name} (Taille : ${item.size}) - ${item.price.toFixed(2)} €</span>
+                    <button class="remove-btn" onclick="removeFromCart(${index})">Retirer</button>
+                `;
+                cartList.appendChild(cartItem);
+            });
+
+            totalElement.textContent = `Total : ${totalPrice.toFixed(2)} €`;
+        }
+
+        function removeFromCart(index) {
+            totalPrice -= cartItems[index].price;
+            cartItems.splice(index, 1);
+            updateCart();
+        }
+
+        function proceedToCheckout() {
+            const checkoutPage = `
+                <div class="container">
+                    <h2>Paiement</h2>
+                    <form>
+                        <label for="card-number">Numéro de carte bancaire :</label><br>
+                        <input type="text" id="card-number" name="card-number" required><br><br>
+
+                        <label for="expiration">Date d'expiration :</label><br>
+                        <input type="month" id="expiration" name="expiration" required><br><br>
+
+                        <label for="cvv">CVV :</label><br>
+                        <input type="text" id="cvv" name="cvv" required><br><br>
+
+                        <button class="btn" type="submit">Payer</button>
+                    </form>
+                </div>
+            `;
+            document.body.innerHTML = checkoutPage;
+        }
+    </script>
+</body>
+</html>
